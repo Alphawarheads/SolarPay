@@ -5,7 +5,7 @@ from typing import List, Optional
 from SolarPVModel import SolarPVModel
 import os
 from dotenv import load_dotenv
-
+import uvicorn
 # Load environment variables
 load_dotenv()
 api_key = "0771554279f9204c977c7bf619352830"
@@ -120,6 +120,6 @@ async def run_combined_model(request: MultiSolarRequest):
 @app.get("/")
 async def root():
     return {"message": "SolarPVModel API is running!"}
-# if __name__ == '__main__':
-#     # 运行fastapi程序
-#     uvicorn.run(app="run:app", host="127.0.0.1", port=8000, reload=True)
+if __name__ == '__main__':
+    # 运行fastapi程序
+    uvicorn.run(app="main:app", host="127.0.0.1", port=8000, reload=True)
