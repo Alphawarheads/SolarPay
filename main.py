@@ -122,4 +122,4 @@ async def root():
     return {"message": "SolarPVModel API is running!"}
 if __name__ == '__main__':
     # 运行fastapi程序
-    uvicorn.run(app="main:app", host="127.0.0.1", port=8000, reload=True)
+    uvicorn.run(app="main:app", host="0.0.0.0", port=8000, reload=True)
